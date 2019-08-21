@@ -30,7 +30,7 @@ def main():
 
 		if args.csv:
 			# Read file
-			with open("bulk.csv") as f:
+			with open(myFile, "r") as f:
 				uArray = [line.rstrip() for line in f]
 				uArray2 = uArray[0].split(",")
 
