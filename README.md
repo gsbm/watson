@@ -10,7 +10,7 @@
 >Make sure that you have installed [Sherlock](https://github.com/sherlock-project/sherlock) before starting installation !
 
 ```bash
-# clone the repository in sherlock's folder
+# clone the repository in sherlock's directory
 $ git clone https://github.com/boardens/watson.git
 
 # change the working directory to watson
@@ -20,6 +20,14 @@ $ cd watson
 
 # install the requirements
 $ python3 -m pip install -r requirements.txt
+```
+
+>The best way to use Watson is to clone it in the Sherlock's directory.<br>
+Anyway, you can change it path to reach Sherlock.
+
+```py
+# Sherlock directory
+sh_dir = 'cd .. && '
 ```
 
 ### Usage
