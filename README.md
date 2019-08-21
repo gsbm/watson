@@ -67,3 +67,8 @@ $ python3 watson.py examples/example.txt
 # csv text file
 $ python3 watson.py --csv examples/example.csv
 ```
+
+## License
+
+[GPL-3.0](https://github.com/boardens/watson/LICENSE/) License
+©2019 Boardens
