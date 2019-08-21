@@ -62,8 +62,8 @@ Run presinstalled examples :
 
 ```bash
 # basic text file
-watson.py examples/example.txt
+$ python3 watson.py examples/example.txt
 
 # csv text file
-watson.py --csv examples/example.csv
+$ python3 watson.py --csv examples/example.csv
 ```
