@@ -12,8 +12,8 @@ import os
 import os.path
 import argparse
 import subprocess
-from os import path
 
+from os import path
 from colorama import init, Fore, Back, Style
 
 module_name = "Watson"
