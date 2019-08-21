@@ -1,13 +1,13 @@
 # watson
-Sherlock assistant to bulk username research
+🏌️‍♀️ Sherlock assistant to bulk username research
 
->Info !
+>This script is based on [Sherlock](https://github.com/sherlock-project/sherlock) originally created by [Siddharth Dushantha](https://github.com/sdushantha)
 
 ## Get started
 
 **Note** : Python 3.6 or higher is required.
 
->Make sure that you have installed [sherlock](https://github.com/sherlock-project/sherlock) before starting installation !
+>Make sure that you have installed [Sherlock](https://github.com/sherlock-project/sherlock) before starting installation !
 
 ```bash
 # clone the repository in sherlock's folder
