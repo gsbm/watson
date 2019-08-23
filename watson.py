@@ -84,7 +84,7 @@ def main():
 parser = argparse.ArgumentParser(description='Watson : Sherlock assistant to bulk username research', epilog=f'(Version {__version__})')
 
 parser.add_argument('FILE', help="File containing usernames", action='store')
-parser.add_argument('-q', '--quiet', dest="quiet", help="Quiet Sherlock output from terminal and keep only essential informations.", action="store_true")
+parser.add_argument('-q', '--quiet', dest="quiet", help="Quiet Sherlock progression and keep only essential informations.", action="store_true")
 parser.add_argument('--csv', dest="csv", help="Use Comma-Separated Values (CSV) File.", action="store_true")
 
 args = parser.parse_args()
