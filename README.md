@@ -1,5 +1,5 @@
 # watson
-🏌️‍♀️ Sherlock assistant to bulk username research
+🏌️‍♀️ Sherlock assistant to bulk username research.
 
 >This script is based on [Sherlock](https://github.com/sherlock-project/sherlock), originally created by [Siddharth Dushantha](https://github.com/sdushantha).
 
