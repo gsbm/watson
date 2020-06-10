@@ -11,6 +11,7 @@
 # Install sherlock if not already done
 
 # clone the repository in sherlock directory
+$ cd sherlock
 $ git clone https://github.com/boardens/watson.git
 
 # change the working directory to watson
