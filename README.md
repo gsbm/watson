@@ -31,11 +31,15 @@ sh_dir = 'cd .. && '
 ```
 ```bash
 · sherlock
-├ data.json
-├ sherlock.py
+├ data_bad_site.json
 ├ site_list.py
-└ · watson
-  └ watson.py
+└ . sherlock
+  ├ notify.py
+  ├ result.py
+  ├ sherlock.py
+  ├ sites.py
+  · watson
+    └ watson.py
 ```
 
 ### Usage
