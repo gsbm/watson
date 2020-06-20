@@ -68,8 +68,11 @@ Run presinstalled examples :
 # basic text file
 $ python3 watson.py examples/example.txt
 
-# csv text file
+# csv file
 $ python3 watson.py --csv examples/example.csv
+
+# json file
+$ python3 watson.py --json examples/example.json
 ```
 
 ## License
