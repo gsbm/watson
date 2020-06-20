@@ -19,6 +19,8 @@ from colorama import init, Fore, Back, Style
 module_name = "Watson"
 __version__ = "1.0.0"
 
+debug = False
+
 # Sherlock directory
 sh_dir = 'cd .. && '
 
@@ -93,8 +95,12 @@ args = parser.parse_args()
 if args.FILE:
 	myFile = args.FILE
 
-	try:
+	if debug:
 		main()
 
-	except:
-		print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" An error occured !")
+	else:
+		try:
+			main()
+
+		except error:
+			print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" An error occured !")
