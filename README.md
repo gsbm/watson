@@ -58,6 +58,7 @@ optional arguments:
   -q, --quiet  Quiet Sherlock output from terminal and keep only essential
                informations.
   --csv        Use Comma-Separated Values (CSV) File.
+  --json       Use JavaScript Object Notation (JSON) File.
 
 (Version 1.0.0)
 ```
