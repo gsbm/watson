@@ -8,7 +8,7 @@
 **Note** : Python 3.6 or higher is required.
 
 ```bash
-# Install sherlock if not already done
+# install sherlock if not already done
 
 # clone the repository in sherlock/sherlock directory
 $ git clone https://github.com/boardens/watson.git
@@ -22,7 +22,7 @@ $ cd watson
 $ python3 -m pip install -r requirements.txt
 ```
 
->The best way to use Watson is to clone it in the `Sherlock/Sherlock` directory.<br>
+>The best way to use Watson is to clone it in the `sherlock/sherlock` directory.<br>
 Anyway, you can change it path to reach `sherlock.py`.
 
 ```py
