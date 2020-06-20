@@ -22,8 +22,8 @@ $ cd watson
 $ python3 -m pip install -r requirements.txt
 ```
 
->The best way to use Watson is to clone it in the Sherlock directory.<br>
-Anyway, you can change it path to reach Sherlock.
+>The best way to use Watson is to clone it in the `Sherlock/Sherlock` directory.<br>
+Anyway, you can change it path to reach `sherlock.py`.
 
 ```py
 # Sherlock directory
