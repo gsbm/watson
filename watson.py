@@ -12,6 +12,7 @@ import os
 import os.path
 import argparse
 import subprocess
+import json
 
 from os import path
 from colorama import init, Fore, Back, Style
@@ -51,6 +52,30 @@ def main():
 
 				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
 
+		elif args.json:
+			# Check if selected file is a JSON file
+			if not myFile.endswith('.json'):
+				print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" The selected file is not a JSON file.")
+
+			else:
+				# Read file
+				with open(myFile) as json_file :
+					data = json.load(json_file)
+
+				# Count items
+				itemCount = len(data)
+				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(itemCount)+" username(s) loaded")
+
+				# Send requests to Sherlock
+				n = itemCount
+				for i in range(0, n):
+					if args.quiet:
+						subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
+
+					else:
+						subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True)
+
+					print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
 
 		else:
 			# Count lines
@@ -89,6 +114,7 @@ parser = argparse.ArgumentParser(description='Watson : Sherlock assistant to bul
 parser.add_argument('FILE', help="File containing usernames", action='store')
 parser.add_argument('-q', '--quiet', dest="quiet", help="Quiet Sherlock progression and keep only essential informations.", action="store_true")
 parser.add_argument('--csv', dest="csv", help="Use Comma-Separated Values (CSV) File.", action="store_true")
+parser.add_argument('--json', dest="json", help="Use JavaScript Object Notation (JSON) File.", action="store_true")
 
 args = parser.parse_args()
 
