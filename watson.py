@@ -31,48 +31,49 @@ def main():
 		if args.csv:
 			# Read file
 			with open(myFile, "r") as f:
-				uArray = [line.rstrip() for line in f]
-				uArray2 = uArray[0].split(",")
+				data = [line.rstrip() for line in f]
+				data = data[0].split(",")
 
 			# Count items
-			fCount = len(uArray2)
-			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(fCount)+" username(s) loaded")
+			itemCount = len(data)
+			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(itemCount)+" username(s) loaded")
 
 			# Send requests to Sherlock
-			n = fCount
+			n = itemCount
 			for i in range(0, n):
 				if args.quiet:
-					subprocess.call((sh_dir+"sherlock.py "+uArray2[i]), shell=True, stdout=open(os.devnull, 'wb'))
+					subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
 
 				else:
-					subprocess.call((sh_dir+"sherlock.py "+uArray2[i]), shell=True)
+					subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True)
 
-				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+uArray2[i]+".txt"+Style.RESET_ALL+"'")
+				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
+
 
 		else:
 			# Count lines
-			fCount = len(open(myFile).readlines(  ))
-			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(fCount)+" username(s) loaded")
+			itemCount = len(open(myFile).readlines(  ))
+			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(itemCount)+" username(s) loaded")
 
 			# Store each line
 			with open(myFile, "r") as ins:
-				uArray = []
+				data = []
 				for fLine in ins:
-					uArray.append(fLine)
+					data.append(fLine)
 					# Remove carriage return
-					uArray2 = [u.rstrip() for u in uArray]
+					data = [u.rstrip() for u in data]
 
 			# Send requests to Sherlock
-			n = fCount
+			n = itemCount
 			for i in range(0, n):
-			#	os.system("sherlock.py "+uArray2[i])
+			#	os.system("sherlock.py "+data[i])
 				if args.quiet:
-					subprocess.call((sh_dir+"sherlock.py "+uArray2[i]), shell=True, stdout=open(os.devnull, 'wb'))
+					subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
 
 				else:
-					subprocess.call((sh_dir+"sherlock.py "+uArray2[i]), shell=True)
+					subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True)
 
-				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+uArray2[i]+".txt"+Style.RESET_ALL+"'")
+				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
 
 	else:
 		if myFile != "":
