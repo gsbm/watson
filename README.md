@@ -46,7 +46,7 @@ sh_dir = 'cd .. && '
 
 ```bash
 $ python3 watson.py --help
-usage: watson.py [-h] [-q] [--csv] FILE
+usage: watson.py [-h] [-q] [--csv] [--json] FILE
 
 Watson : Sherlock assistant to bulk username research
 
