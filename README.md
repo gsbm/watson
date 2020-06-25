@@ -26,7 +26,7 @@ $ python3 -m pip install -r requirements.txt
 Anyway, you can change it path to reach `sherlock.py`.
 
 ```py
-# Sherlock directory
+# sherlock directory
 sh_dir = 'cd .. && '
 ```
 ```bash
