@@ -128,5 +128,5 @@ if args.FILE:
 		try:
 			main()
 
-		except error:
-			print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" An error occured !")
+		except Exception as error:
+			print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" Error : "+str(error))
