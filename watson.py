@@ -22,26 +22,26 @@ __version__ = "1.0.0"
 
 debug = False
 
-# Sherlock directory
+# sherlock directory
 sh_dir = 'cd .. && '
 
 init(convert=True, autoreset=True)
 
 def main():
-	# Check if the file exist
+	# check if the file exist
 	if path.exists(myFile) is True:
 
 		if args.csv:
-			# Read file
+			# read file
 			with open(myFile, "r") as f:
 				data = [line.rstrip() for line in f]
 				data = data[0].split(",")
 
-			# Count items
+			# count items
 			itemCount = len(data)
 			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(itemCount)+" username(s) loaded")
 
-			# Send requests to Sherlock
+			# send requests to Sherlock
 			n = itemCount
 			for i in range(0, n):
 				if args.quiet:
@@ -53,20 +53,20 @@ def main():
 				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
 
 		elif args.json:
-			# Check if selected file is a JSON file
+			# check if selected file is a JSON file
 			if not myFile.endswith('.json'):
 				print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" The selected file is not a JSON file.")
 
 			else:
-				# Read file
+				# read file
 				with open(myFile) as json_file :
 					data = json.load(json_file)
 
-				# Count items
+				# count items
 				itemCount = len(data)
 				print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(itemCount)+" username(s) loaded")
 
-				# Send requests to Sherlock
+				# send requests to Sherlock
 				n = itemCount
 				for i in range(0, n):
 					if args.quiet:
@@ -78,11 +78,11 @@ def main():
 					print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
 
 		else:
-			# Count lines
+			# count lines
 			itemCount = len(open(myFile).readlines(  ))
 			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+myFile+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(itemCount)+" username(s) loaded")
 
-			# Store each line
+			# store each line
 			with open(myFile, "r") as ins:
 				data = []
 				for fLine in ins:
@@ -90,10 +90,9 @@ def main():
 					# Remove carriage return
 					data = [u.rstrip() for u in data]
 
-			# Send requests to Sherlock
+			# send requests to Sherlock
 			n = itemCount
 			for i in range(0, n):
-			#	os.system("sherlock.py "+data[i])
 				if args.quiet:
 					subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
 
