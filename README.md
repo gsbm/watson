@@ -30,16 +30,16 @@ Anyway, you can change it path to reach `sherlock.py`.
 sh_dir = 'cd .. && '
 ```
 ```bash
-· sherlock
-├ data_bad_site.json
-├ site_list.py
-└ . sherlock
-  ├ notify.py
-  ├ result.py
-  ├ sherlock.py
-  ├ sites.py
-  · watson
-    └ watson.py
+sherlock
+├── data_bad_site.json
+├── site_list.py
+└── sherlock
+    ├── notify.py
+    ├── result.py
+    ├── sherlock.py
+    ├── sites.py
+    └── watson
+        └── watson.py
 ```
 
 ### Usage
