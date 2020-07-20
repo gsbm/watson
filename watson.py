@@ -115,11 +115,10 @@ parser.add_argument('--json', dest="json", help="Use JavaScript Object Notation 
 
 args = parser.parse_args()
 
-if args.FILE:
-	myFile = args.FILE
+myFile = args.FILE
 
-	try:
-		main()
+try:
+	main()
 
-	except Exception as error:
-		print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" Error : "+str(error))
+except Exception as error:
+	print(Fore.RED+Style.BRIGHT+"[!]"+Style.RESET_ALL+" Error : "+str(error))
