@@ -25,9 +25,9 @@ sh_dir = "cd .. && "
 
 init(convert=True, autoreset=True)
 
-def send_requests(file, data, lenght, quiet=False):
+def send_requests(file, data, quiet=False):
 	# send requests and catch output
-	for i in range(0, lenght):
+	for i in range(0, len(data)):
 		if quiet:
 			subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
 
@@ -46,24 +46,12 @@ def method(file, csv_format=False, json_format=False, quiet=False):
 				data = [line.rstrip() for line in f]
 				data = data[0].split(",")
 
-			# count items
-			data_len = len(data)
-			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+file+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(data_len)+" username(s) loaded")
-
 		elif json_format:
 			# read file
 			with open(file) as json_file :
 				data = json.load(json_file)
 
-			# count items
-			data_len = len(data)
-			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+file+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(data_len)+" username(s) loaded")
-
 		else:
-			# count lines
-			data_len = len(open(file).readlines())
-			print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+file+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(data_len)+" username(s) loaded")
-
 			# store each line
 			with open(file, "r") as ins:
 				data = []
@@ -72,8 +60,10 @@ def method(file, csv_format=False, json_format=False, quiet=False):
 					# remove carriage return
 					data = [u.rstrip() for u in data]
 
+		print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+file+Fore.YELLOW+"]"+Style.RESET_ALL+" {0}".format(len(data))+" username(s) loaded")
+
 		# send requests to sherlock
-		send_requests(file, data, data_len, quiet)
+		send_requests(file, data, quiet)
 
 	else:
 		if file != "":
