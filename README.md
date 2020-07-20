@@ -27,7 +27,7 @@ Anyway, you can change it path to reach `sherlock.py`.
 
 ```py
 # sherlock directory
-sh_dir = 'cd .. && '
+sh_dir = "cd .. && "
 ```
 ```bash
 sherlock
@@ -48,7 +48,7 @@ sherlock
 $ python3 watson.py --help
 usage: watson.py [-h] [-q] [--csv] [--json] FILE
 
-Watson : Sherlock assistant to bulk username research
+Watson: Sherlock assistant to bulk username research
 
 positional arguments:
   FILE         File containing usernames
@@ -60,7 +60,7 @@ optional arguments:
   --csv        Use Comma-Separated Values (CSV) File.
   --json       Use JavaScript Object Notation (JSON) File.
 
-(Version 1.0.0)
+(Version 1.0.2)
 ```
 
 Run presinstalled examples :
