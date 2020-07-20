@@ -76,6 +76,12 @@ $ python3 watson.py --csv examples/example.csv
 $ python3 watson.py --json examples/example.json
 ```
 
+## Implementations
+
+Currently working on other implementations like :
+- Simultaneous sherlock requests, especially for massive username research
+- Sherlock requests over tor, including circuit renew between requests
+
 ## License
 
 [GPL-3.0](https://github.com/boardens/watson/LICENSE/) License
