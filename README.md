@@ -26,7 +26,7 @@ $ python3 -m pip install -r requirements.txt
 Anyway, you can change it path to reach it in `config.json`
 
 ```json
-"sherlock_dir": "cd .. && sherlock.py"
+"sherlock_dir": "..\\sherlock.py"
 ```
 ```bash
 sherlock
