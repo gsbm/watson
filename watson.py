@@ -20,19 +20,27 @@ from colorama import init, Fore, Back, Style
 module_name = "Watson"
 __version__ = "1.0.2"
 
-# sherlock directory
-sh_dir = "cd .. && "
+config_file = "config.json"
 
 init(convert=True, autoreset=True)
+
+def load_config(file):
+	# load json file
+	global sh_dir
+	with open(file) as f:
+		config = json.load(f)
+		f.close()
+
+		sh_dir = config["sherlock_dir"]
 
 def send_requests(file, data, quiet=False):
 	# send requests and catch output
 	for i in range(0, len(data)):
 		if quiet:
-			subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
+			subprocess.call((sh_dir+" "+data[i]), shell=True, stdout=open(os.devnull, 'wb'))
 
 		else:
-			subprocess.call((sh_dir+"sherlock.py "+data[i]), shell=True)
+			subprocess.call((sh_dir+" "+data[i]), shell=True)
 
 		print(Fore.YELLOW+Style.BRIGHT+"[W~:"+Fore.WHITE+file+Fore.YELLOW+"]"+Style.RESET_ALL+" Infos were stored in '"+Style.BRIGHT+data[i]+".txt"+Style.RESET_ALL+"'")
 
@@ -83,6 +91,7 @@ parser.add_argument("--json", dest="json", help="Use JavaScript Object Notation 
 args = parser.parse_args()
 
 try:
+	load_config(config_file)
 	method(args.FILE, args.csv, args.json, args.quiet)
 
 except Exception as error:
