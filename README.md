@@ -83,4 +83,4 @@ Currently working on other implementations like :
 
 ## License
 
-[GPL-3.0](https://github.com/boardens/watson/LICENSE/) License
+[GPL-3.0](https://github.com/greenmagenta/watson/LICENSE/) License
