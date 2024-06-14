@@ -16,10 +16,10 @@ $ git clone https://github.com/greenmagenta/watson.git
 # Change the working directory to watson
 $ cd watson
 
-# Install python3 and python3-pip if they are not installed
+# Install python and python-pip if they are not installed
 
 # Install the requirements
-$ python3 -m pip install -r requirements.txt
+$ python -m pip install -r requirements.txt
 ```
 
 >The best way to use Watson is to clone it in the `sherlock/sherlock` directory.<br>
