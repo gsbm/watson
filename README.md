@@ -8,17 +8,17 @@
 **Note** : Python 3.6 or higher is required.
 
 ```bash
-# install sherlock if not already done
+# Install sherlock if not already done
 
-# clone the repository in sherlock/sherlock directory
+# Clone the repository in sherlock/sherlock directory
 $ git clone https://github.com/greenmagenta/watson.git
 
-# change the working directory to watson
+# Change the working directory to watson
 $ cd watson
 
-# install python3 and python3-pip if they are not installed
+# Install python3 and python3-pip if they are not installed
 
-# install the requirements
+# Install the requirements
 $ python3 -m pip install -r requirements.txt
 ```
 
@@ -65,13 +65,13 @@ optional arguments:
 Run presinstalled examples :
 
 ```bash
-# basic text file
+# Basic text file
 $ python3 watson.py examples/example.txt
 
-# csv file
+# CSV file
 $ python3 watson.py --csv examples/example.csv
 
-# json file
+# JSON file
 $ python3 watson.py --json examples/example.json
 ```
 
