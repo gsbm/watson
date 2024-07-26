@@ -13,7 +13,7 @@
 # Install sherlock if not already done
 
 # Clone the repository in sherlock/sherlock directory
-$ git clone https://github.com/greenmagenta/watson.git
+$ git clone https://github.com/gsbm/watson.git
 
 # Change the working directory to watson
 $ cd watson
