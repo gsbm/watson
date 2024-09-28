@@ -6,8 +6,8 @@
 ## Get started
 
 ### Installation
-
-**Note** : Python 3.6 or higher is required.
+> [!NOTE]
+> Python 3.6 or higher is required.
 
 ```bash
 # Install sherlock if not already done
@@ -23,8 +23,7 @@ $ cd watson
 # Install the requirements
 $ python -m pip install -r requirements.txt
 ```
-
->The best way to use Watson is to clone it in the `sherlock/sherlock` directory.<br>
+The best way to use Watson is to clone it in the `sherlock/sherlock` directory.<br>
 Anyway, you can change it path to reach it in `config.json`
 
 ```json
@@ -85,4 +84,4 @@ Currently working on other implementations like :
 
 ## License
 
-[GPL-3.0](https://github.com/greenmagenta/watson/LICENSE/) License
+This project is licensed under [GPL-3.0](https://github.com/greenmagenta/watson/LICENSE/) License
